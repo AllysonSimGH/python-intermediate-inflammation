@@ -9,7 +9,6 @@ and each column represents a single day across all patients.
 
 import numpy as np
 
-
 def load_csv(filename):  
     """Load a Numpy array from a CSV
 
@@ -19,7 +18,11 @@ def load_csv(filename):
 
 
 def daily_mean(data):
-    """Calculate the daily mean of a 2d inflammation data array."""
+    """Calculates the mean of the input data
+
+    :param data: input data
+    :return: mean value
+    """
     return np.mean(data, axis=0)
 
 
