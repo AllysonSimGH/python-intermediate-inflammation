@@ -2,6 +2,7 @@
 
 import numpy as np
 import numpy.testing as npt
+import pytest
 
 from inflammation.models import daily_mean, daily_min, daily_max
 
@@ -29,6 +30,13 @@ def test_daily_mean_integers():
     # Need to use Numpy testing functions to compare arrays
     npt.assert_array_equal(daily_mean(test_input), test_result)
 
+def test_daily_mean_string():
+    """Test for TypeError when passing strings"""      # Write summary before code clarifies purpose
+
+    with pytest.raises(TypeError):                     # string instead of array give TypeError
+        error_expected = daily_mean(['hi', 'there'])    # simple input  
+
+
 def test_daily_max_integers():
     """Test that the max function works for an array of positive and negative integers.
     """
@@ -38,4 +46,11 @@ def test_daily_max_integers():
 
 
     # Need to use Numpy testing functions to compare arrays
-    npt.assert_array_equal(daily_max(test_input), test_result)
+    npt.assert_array_equal(daily_max(test_input), test_result) 
+
+def test_daily_max_string():
+    """Test for TypeError when passing strings"""      # Write summary before code clarifies purpose
+
+    with pytest.raises(TypeError):                     # string instead of array give TypeError
+        error_expected = daily_max(['hi', 'there'])    # simple input      
+
