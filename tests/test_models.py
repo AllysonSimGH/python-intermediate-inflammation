@@ -87,12 +87,10 @@ def test_daily_min(test_input, test_result):
     """Test that min function works for an array of positive and negative integers."""
     npt.assert_array_equal(daily_min(test_input), test_result)
 
-
 def test_daily_max_empty_array():
     """Test that daily_max raises ValueError when given an empty array."""
     with pytest.raises(ValueError):
         daily_max([])
-
 
 def test_daily_max_nan_propagation():
     data = np.array([[1, np.nan], [3, 4]])
